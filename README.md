@@ -6,13 +6,13 @@ Note that explicit enumeration of the such trees in computationally unfeasible i
 
 The input to the Metropolis-Hastings algorithm is the energy functional governing the canonical ensemble that is being sampled. In our case, we take it to be
 ```math
-\begin{align}
+\begin{aligned}
 E(T) = \alpha \cdot {\text{diameter}}(T) &+ \gamma\cdot \#(\text{bends})
- + \sum_{i} \delta_i \cdot \#(\text{vertices of degree }i) \\
- &+ \sum_{j} \omega_j \cdot \text{winding number of $T$ around $v_j$}
-\end{align}
+ + \sum\limits_{i} \delta_i \cdot \#(\text{vertices of degree }i) \\
+ &+ \sum\limits_{j} \omega_j \cdot (\text{winding number of }T\text{ around }v_j)
+\end{aligned}
 ```
-where $T$ is a spanning tree and the coefficients $\alpha, \gamma, \delta_i, \omega_j$ are parameters that control the strength and direction of the bias for each term. A positive coefficient penalizes the corresponding property, while a negative one rewards it. In particular,
+where $T$ is a spanning tree and the coefficients $\alpha, \gamma, \delta_i, \omega_j$ are the parameters that control the strength and direction of the bias for each term. A positive coefficient penalizes the corresponding property, while a negative one rewards it. In particular,
 - larger $\alpha$ favors more isotropic configurations;
 - smaller $\gamma$ leads to more jagged configurations;
 - smaller $\delta_3, \delta_4$ favor branching;
@@ -21,17 +21,17 @@ where $T$ is a spanning tree and the coefficients $\alpha, \gamma, \delta_i, \om
 Below are some examples of the Metropolis-Hastings dynamics for various biases.
 
 <div align="center">
-  <img src="maze_straight.gif" width="250px" loop=infinite/>
-  <img src="maze_turns.gif" width="250px" loop=infinite/>
+  <img src="maze_straight.gif" width="300px" loop=infinite/>
+  <img src="maze_turns.gif" width="300px" loop=infinite/>
 </div>
 
 <div align="center">
-  <img src="maze_crosses.gif" width="250px" loop=infinite/>
-  <img src="maze_whirpool.gif" width="250px" loop=infinite/>
+  <img src="maze_crosses.gif" width="300px" loop=infinite/>
+  <img src="maze_whirpool.gif" width="300px" loop=infinite/>
 </div>
 
 <div align="center">
-  <img src="maze_radial.gif" width="250px" loop=infinite/>
+  <img src="maze_radial.gif" width="300px" loop=infinite/>
 </div>
 
 ### Structure
@@ -45,7 +45,7 @@ Requirements:
 `networkx`, `matplotlib`
 
 ### Further development
-For larger grids performance becomes an issue.
+Improve performance for larger grids.
 
 ### References
 [1] https://en.wikipedia.org/wiki/Kirchhoff%27s_theorem
