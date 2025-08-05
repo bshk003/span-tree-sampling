@@ -2,7 +2,7 @@ from abc import ABC, abstractmethod
 import math
 import random
 
-# An abstract superclass for microstates.
+# An abstract superclass for the ensemble states.
 class State(ABC):
     @abstractmethod
     def propose_move(self):
@@ -27,7 +27,6 @@ class MetropolisHastings():
             current_energy = self.state.energy()
             proposed_energy, move_data = self.state.propose_move()
             
-            #pr_accept = min(1, math.exp(-self.beta * (proposed_energy - current_energy)))
             if proposed_energy <= current_energy:
                 pr_accept = 1.0
             else:
