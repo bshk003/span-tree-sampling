@@ -5,13 +5,13 @@ This is a stochastic modeling project. We use a particular instance of the MCMC 
 Note that explicit enumeration of the such trees in computationally unfeasible is general, since their number on a $m$-by-$n$ grid grows asymptotically as $exp\left(\frac{4\pi}{G}mn\right)$. 
 
 The input to the Metropolis-Hastings algorithm is the energy functional governing the canonical ensemble that is being sampled. In our case, we take it to be
-$$
+```math
 \begin{align}
 E(T) = \alpha \cdot {\text{diameter}}(T) &+ \gamma\cdot \#(\text{bends})
  + \sum_{i} \delta_i \cdot \#(\text{vertices of degree }i) \\
  &+ \sum_{j} \omega_j \cdot \text{winding number of $T$ around $v_j$}
 \end{align}
-$$
+```
 where $T$ is a spanning tree and the coefficients $\alpha, \gamma, \delta_i, \omega_j$ are parameters that control the strength and direction of the bias for each term. A positive coefficient penalizes the corresponding property, while a negative one rewards it. In particular,
 - larger $\alpha$ favors more isotropic configurations;
 - smaller $\gamma$ leads to more jagged configurations;
