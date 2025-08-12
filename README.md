@@ -1,7 +1,7 @@
 ### Generating random mazes via Markov chain Monte Carlo sampling
 
 This is a stochastic simulation project. We use a particular instance of the MCMC method, namely the Metropolis-Hastings algorithm, to sample spanning trees on a 2d rectangular grid (with or without a periodic boundary condition with respect to one of the dimensions) with a custom bias.
-Note that explicit enumeration of the such trees in computationally unfeasible is general, since the number of spanning trees on a $m$-by-$n$ grid grows asymptotically as $exp\left(\frac{4\pi}{G}mn\right)$, where $G= 0.915965...$ is the Catalan constant.
+Note that explicit enumeration of the such trees in computationally unfeasible in general, since the number of spanning trees on a $m$-by-$n$ grid grows asymptotically as $exp\left(\frac{4\pi}{G}mn\right)$, where $G= 0.915965...$ is the Catalan constant.
 
 The input to the Metropolis-Hastings algorithm is the energy functional governing the canonical ensemble that is being sampled. In our case, we take it to be
 ```math
